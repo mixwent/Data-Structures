@@ -12,18 +12,20 @@ class Vector{
         //Constructor:
         Vector(){};
 
-        Vector(int s){
-            arrP = new T[s]; //initialising dynamic array.
-            size = s; //Storing the size for member functions
+        Vector(){
+
+            arrP = nullptr; //initialising dynamic array.
+            size = 0; //Storing the size for member functions
+            capacity = 0;
         }
 
 
         //Member functions:
         void push(T element); //Adds element to end of vector.
-        T pop(); //Returns elements at end of vector.
+        T pop(); //Returns elements at end of vector and decreases size by
         void insert(T element, int index); //Adds element at index.
         int size();
-        T operator[]();  //returns element at index.
+        T operator[](int index);  //returns element at index.
 
         //Destructor:
         ~Vector(){};
@@ -32,7 +34,8 @@ class Vector{
 
         //Member variables:
         T* arrP;
-        int size;
+        int size = 0;
+        int capacity = 0;
 
         
 };

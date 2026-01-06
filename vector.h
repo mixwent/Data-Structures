@@ -15,7 +15,7 @@ class Vector{
         Vector(){
 
             arrP = nullptr; //initialising dynamic array.
-            size = 0; //Storing the size for member functions
+            s = 0; //Storing the size for member functions
             capacity = 0;
         }
 
@@ -34,7 +34,7 @@ class Vector{
 
         //Member variables:
         T* arrP;
-        int size = 0;
+        int s = 0;
         int capacity = 0;
 
         

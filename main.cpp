@@ -39,7 +39,7 @@ T Vector::pop(){
         }
 
         popped = arrP[size -1];
-        delete arrP
+        delete[] arrP;
 
         arrP = newPopArr;
         size--;
@@ -54,35 +54,39 @@ void Vector::insert(T element, int index){
 
     T* newInsertArr;
 
-    newShiftArr = new T[size + 1];
+    newInsertArr = new T[size + 1];
     
     for (int i = 0; i < index; i++){
-        newShiftArr[i] = arrP[i];
+        newInsertArr[i] = arrP[i];
     }
 
-    newShiftArr[i] = element;
+    newInsertArr[index] = element;
 
-    for (int j = i++; j = size; j++){
-        newShiftArr[j] = arrP[i];
-        i++;
+    for (int j = index; j <= size; j++){
+        newInsertArr[j] = arrP[j];
     }
-}
 
-    newPopArr[shifted index]
+    delete[] arrP;
 
-
-
-
-
-    if  ()
+    arrP = newInsertArr;
+    size++;
+    capacity++;
 }
 
 int Vector::size(){
-    return size;
+    return s;
 }
 
 T Vector::operator[](int index){
+
+    if (index < 0 || index > capacity){
+        cout << "\n** Index out of bounds. **\n";
+        return 1;
+    }
+
+    else{
     return arrP[index];
+    }
 }
 
 

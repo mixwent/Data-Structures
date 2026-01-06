@@ -1,83 +1,90 @@
-#include VECTOR.H
+#include "vector.h"
 
 #include <iostream>
 using namespace std;
 
 
-void Vector::push(T element){
+template <typename T>
+void Vector<T>::push(T element){
 
     T* newPushArr;
 
-    newPushArr = new T[size + 1];
+    newPushArr = new T[sizeInt + 1];
 
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < sizeInt; i++){
         newPushArr[i] = arrP[i];
-    }
+    };
 
-    newPushArr[size] = element;
+    newPushArr[sizeInt] = element;
 
     delete[] arrP;
 
     arrP = newPushArr;
-    size++;
+    sizeInt++;
     capacity++;
 
 }
 
-
-T Vector::pop(){
+template <typename T>
+T Vector<T>::pop(){
 
     T* newPopArr;
     T popped;
 
-    if (size = 0) {return 0};
+    if (sizeInt == 0) {
+        return 0;}
+
     else {
 
-        newPopArr = new T[size - 1];
-        for (int i = 0; i < newSize; i++){
+        newPopArr = new T[sizeInt - 1];
+        for (int i = 0; i < sizeInt - 1; i++){
             newPopArr[i] = arrP[i];
         }
 
-        popped = arrP[size -1];
+        popped = arrP[sizeInt -1];
         delete[] arrP;
 
         arrP = newPopArr;
-        size--;
+        sizeInt--;
         capacity--;
 
-        return popped;
-    }
+        return popped;}
 }
 
 
-void Vector::insert(T element, int index){
+template <typename T>
+void Vector<T>::insert(T element, int index){
 
     T* newInsertArr;
 
-    newInsertArr = new T[size + 1];
+    newInsertArr = new T[sizeInt + 1];
     
     for (int i = 0; i < index; i++){
         newInsertArr[i] = arrP[i];
-    }
+    };
 
     newInsertArr[index] = element;
 
-    for (int j = index; j <= size; j++){
+    for (int j = index; j <= sizeInt; j++){
         newInsertArr[j] = arrP[j];
-    }
+    };
 
     delete[] arrP;
 
     arrP = newInsertArr;
-    size++;
+    sizeInt++;
     capacity++;
 }
 
-int Vector::size(){
-    return s;
+
+template <typename T>
+int Vector<T>::size(){
+    return sizeInt;
 }
 
-T Vector::operator[](int index){
+
+template <typename T>
+T Vector<T>::operator[](int index){
 
     if (index < 0 || index > capacity){
         cout << "\n** Index out of bounds. **\n";

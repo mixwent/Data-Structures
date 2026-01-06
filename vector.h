@@ -1,19 +1,25 @@
-//#ifndef 
-//#define
+#ifndef VECTOR_H
+#define VECTOR_H
 
 //#include
 #include <iostream>
 using namespace std;
 
-template <int T>;
+template <typename T>
 
 class Vector{
+
+    private : 
+
+        //Member variables:
+        T* arrP;
+        int sizeInt = 0;
+        int capacity = 0;
+
 
     public :
 
         //Constructor:
-        Vector(){};
-
         // Vector(){
 
         //     arrP = nullptr; //initialising dynamic array.
@@ -21,7 +27,7 @@ class Vector{
         //     c = 0;
         // }
 
-        Vector() : arrP(nullptr), size(0), capacity(0) {};
+        Vector() : arrP(nullptr), sizeInt(0), capacity(0) {};
 
 
         //Member functions:
@@ -32,14 +38,14 @@ class Vector{
         T operator[](int index);  //returns element at index.
 
         //Destructor:
-        ~Vector(){};
+        ~Vector(){
 
-    private : 
-
-        //Member variables:
-        T* arrP;
-        int size = 0;
-        int capacity = 0;
+            delete[] arrP;
+        };
 
         
 };
+
+#include "vector.cpp"
+
+#endif

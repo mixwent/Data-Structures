@@ -32,3 +32,9 @@ No datastructures from the C standard library may be imported.
 ## Bonus Points 
 
 - implement a copy constructor and override the assignment (=) operator
+
+
+
+
+Why do I have to include the cpp file in the header.
+Why do I have to add the template syntax before each function in cpp.

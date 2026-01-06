@@ -5,6 +5,8 @@
 #include <iostream>
 using namespace std;
 
+template <int T>;
+
 class Vector{
 
     public :
@@ -12,12 +14,14 @@ class Vector{
         //Constructor:
         Vector(){};
 
-        Vector(){
+        // Vector(){
 
-            arrP = nullptr; //initialising dynamic array.
-            s = 0; //Storing the size for member functions
-            capacity = 0;
-        }
+        //     arrP = nullptr; //initialising dynamic array.
+        //     s = 0; //Storing the size for member functions
+        //     c = 0;
+        // }
+
+        Vector() : arrP(nullptr), size(0), capacity(0) {};
 
 
         //Member functions:
@@ -34,7 +38,7 @@ class Vector{
 
         //Member variables:
         T* arrP;
-        int s = 0;
+        int size = 0;
         int capacity = 0;
 
         

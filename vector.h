@@ -41,6 +41,7 @@ class Vector{
         ~Vector(){
 
             delete[] arrP;
+            cout << "Destructor is called.";
         };
 
         
